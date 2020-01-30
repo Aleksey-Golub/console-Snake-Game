@@ -1,0 +1,11 @@
+C:\Users\Алексей\Documents\GitHub\console-Snake-Game\My own console Snake\My own console Snake\bin\Debug\netcoreapp3.1\My own console Snake.exe
+C:\Users\Алексей\Documents\GitHub\console-Snake-Game\My own console Snake\My own console Snake\bin\Debug\netcoreapp3.1\My own console Snake.deps.json
+C:\Users\Алексей\Documents\GitHub\console-Snake-Game\My own console Snake\My own console Snake\bin\Debug\netcoreapp3.1\My own console Snake.runtimeconfig.json
+C:\Users\Алексей\Documents\GitHub\console-Snake-Game\My own console Snake\My own console Snake\bin\Debug\netcoreapp3.1\My own console Snake.runtimeconfig.dev.json
+C:\Users\Алексей\Documents\GitHub\console-Snake-Game\My own console Snake\My own console Snake\bin\Debug\netcoreapp3.1\My own console Snake.dll
+C:\Users\Алексей\Documents\GitHub\console-Snake-Game\My own console Snake\My own console Snake\bin\Debug\netcoreapp3.1\My own console Snake.pdb
+C:\Users\Алексей\Documents\GitHub\console-Snake-Game\My own console Snake\My own console Snake\obj\Debug\netcoreapp3.1\My own console Snake.csprojAssemblyReference.cache
+C:\Users\Алексей\Documents\GitHub\console-Snake-Game\My own console Snake\My own console Snake\obj\Debug\netcoreapp3.1\My own console Snake.AssemblyInfoInputs.cache
+C:\Users\Алексей\Documents\GitHub\console-Snake-Game\My own console Snake\My own console Snake\obj\Debug\netcoreapp3.1\My own console Snake.AssemblyInfo.cs
+C:\Users\Алексей\Documents\GitHub\console-Snake-Game\My own console Snake\My own console Snake\obj\Debug\netcoreapp3.1\My own console Snake.dll
+C:\Users\Алексей\Documents\GitHub\console-Snake-Game\My own console Snake\My own console Snake\obj\Debug\netcoreapp3.1\My own console Snake.pdb
