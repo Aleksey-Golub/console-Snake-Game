@@ -12,7 +12,7 @@ namespace My_own_console_Snake
             Console.SetBufferSize(windowWidth, windowHeight);
             Console.SetWindowSize(windowWidth, windowHeight);
 
-            Border border = new Border(windowWidth, windowHeight);
+            Border border = new Border(windowWidth, windowHeight, '#');
             border.Draw();
             
 

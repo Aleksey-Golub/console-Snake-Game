@@ -13,11 +13,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\Алексей\\Documents\\GitHub\\console-Snake-Game\\My own console Snake\\My own console Snake\\My own console Snake.csproj",
+      "projectUniqueName": "C:\\Users\\Алексей\\Documents\\GitHub\\console-Snake-Game\\console-Snake-Game\\My own console Snake\\My own console Snake\\My own console Snake.csproj",
       "projectName": "My own console Snake",
-      "projectPath": "C:\\Users\\Алексей\\Documents\\GitHub\\console-Snake-Game\\My own console Snake\\My own console Snake\\My own console Snake.csproj",
+      "projectPath": "C:\\Users\\Алексей\\Documents\\GitHub\\console-Snake-Game\\console-Snake-Game\\My own console Snake\\My own console Snake\\My own console Snake.csproj",
       "packagesPath": "C:\\Users\\Алексей\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\Алексей\\Documents\\GitHub\\console-Snake-Game\\My own console Snake\\My own console Snake\\obj\\",
+      "outputPath": "C:\\Users\\Алексей\\Documents\\GitHub\\console-Snake-Game\\console-Snake-Game\\My own console Snake\\My own console Snake\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\Алексей\\AppData\\Roaming\\NuGet\\NuGet.Config",

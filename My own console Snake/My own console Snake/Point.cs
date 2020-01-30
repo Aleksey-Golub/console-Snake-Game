@@ -6,20 +6,20 @@ namespace My_own_console_Snake
 {
     class Point
     {
-        public int X { get; set; }
-        public int Y { get; set; }
-        public char Symbol { get; set; }
+        int x;
+        int y;
+        char sym;
         public Point(int x, int y, char sym)
         {
-            X = x;
-            Y = y;
-            Symbol = sym;
+            this.x = x;
+            this.y = y;
+            this.sym = sym;
         }
 
         internal void Draw()
         {
-            Console.SetCursorPosition(X, Y);
-            Console.WriteLine(Symbol);
+            Console.SetCursorPosition(x, y);
+            Console.Write(sym);
         }
     }
 }
