@@ -23,8 +23,8 @@ namespace My_own_console_Snake
 
         internal void Draw()
         {
-            foreach (var l in pLines)
-                l.Draw();
+            foreach (var line in pLines)
+                line.Draw();
         }
     }
 }
