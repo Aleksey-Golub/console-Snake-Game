@@ -4,27 +4,28 @@ using System.Text;
 
 namespace My_own_console_Snake
 {
-    class Border
+    class Barriers : Figure
     {
-        List<Figure> pLines = new List<Figure>();
-
-        public Border(int windowWidth, int windowHeight, char sym)
+        
+        public Barriers(int windowWidth, int windowHeight, char sym)
         {
             HorizontalLine upperLine = new HorizontalLine(0, windowWidth - 2, 0, sym);
             HorizontalLine downLine = new HorizontalLine(0, windowWidth - 2, windowHeight - 1, sym);
             VerticalLine leftLine = new VerticalLine(0, 0, windowHeight - 1, sym);
             VerticalLine rightLine = new VerticalLine(windowWidth - 2, 0, windowHeight - 1, sym);
 
-            pLines.Add(upperLine);
-            pLines.Add(downLine);
-            pLines.Add(leftLine);
-            pLines.Add(rightLine);
+            pList = new List<Point>();
+
+            pList.AddRange(upperLine.pList);
+            pList.AddRange(downLine.pList);
+            pList.AddRange(leftLine.pList);
+            pList.AddRange(rightLine.pList);
         }
 
-        internal void Draw()
+        public override void Draw()
         {
-            foreach (var line in pLines)
-                line.Draw();
+            foreach (var p in pList)
+                p.Draw();
         }
     }
 }

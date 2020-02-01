@@ -7,15 +7,12 @@ namespace My_own_console_Snake
     {
         static void Main(string[] args)
         {
-            /*  Исправить
-             *  Дописать snake.IsHit(border)
-             * 1. Убрать спавн пищи в теле Змейки
-             * 2. Оформить "экран смерти"
-             * 2.2 Дать выбор: рестарт или выход
-             * 3. Добавить счет, увеличив экран игры
-             * 4. Добавить ускорение при съедении пищи
-             * 6. Исключить возможность поворота в себя
-             * 7. Исправить System.ArgumentOutOfRangeException при выходе за границу поля
+            /*  Осталось Исправить
+             * 1. Оформить "экран смерти"
+             * 1.2 Дать выбор: рестарт или выход
+             * 2. Добавить счет, увеличив экран игры
+             * 3. Добавить ускорение при съедении пищи
+             * 4. Раскрасить игру: Змея - зеленая, еда - красная
             */
 
             Console.CursorVisible = false;
@@ -29,8 +26,8 @@ namespace My_own_console_Snake
             Console.SetWindowSize(windowWidth, windowHeight);
 
             // Создание и отрисовка границы поля
-            Border border = new Border(windowWidth, windowHeight, '#');
-            border.Draw();
+            Barriers barrier = new Barriers(windowWidth, windowHeight, '#');
+            barrier.Draw();
 
             // Создание и отрисовка Змейки
             Point p = new Point(4, 5, '*');
@@ -39,24 +36,24 @@ namespace My_own_console_Snake
 
             // Создание и отрисовка еды
             FoodCreator foodCreator = new FoodCreator(windowWidth, windowHeight, '@');
-            Point food = foodCreator.CreateFood();
+            Point food = foodCreator.CreateFood(snake.pList);
             food.Draw();
 
             while (true)
             {
-                if(snake.IsHitBody()) // (snake.IsHit(border) || snake.IsHitBody())
+                if (snake.IsHit(barrier) || snake.IsHitBody())
                     break;
 
                 if (snake.Eat(food))
                 {
-                    food = foodCreator.CreateFood();
+                    food = foodCreator.CreateFood(snake.pList);
                     food.Draw();
                 }
                 else
                     snake.Move();
 
 
-                Thread.Sleep(100);
+                Thread.Sleep(150);
 
                 if (Console.KeyAvailable)
                 {

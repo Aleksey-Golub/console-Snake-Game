@@ -5,7 +5,7 @@ using System.Text;
 namespace My_own_console_Snake
 {
     class Snake : Figure
-    {
+    {   
         private Direction direction;
 
         public Snake(Point tail, int length, Direction direction)
@@ -40,10 +40,18 @@ namespace My_own_console_Snake
             return nextPoint;
         }
 
-        //internal bool IsHit(Border border)
-        //{
-        //    throw new NotImplementedException();
-        //}
+        internal bool IsHit(Figure barrier)
+        {
+            Point head = new Point(pList[pList.Count - 1]);
+
+            foreach(Point p in barrier.pList)
+            {
+                if (head.IsHit(p))
+                    return true;
+            }
+            return false;
+
+        }
 
         internal bool IsHitBody()
         {
@@ -71,21 +79,38 @@ namespace My_own_console_Snake
 
         internal void HandleKey(ConsoleKey key)
         {
-            switch (key)
+            if(key == ConsoleKey.UpArrow && direction != Direction.down)
             {
-                case ConsoleKey.UpArrow:
-                    direction = Direction.up;
-                    break;
-                case ConsoleKey.DownArrow:
-                    direction = Direction.down;
-                    break;
-                case ConsoleKey.LeftArrow:
-                    direction = Direction.left;
-                    break;
-                case ConsoleKey.RightArrow:
-                    direction = Direction.right;
-                    break;
+                direction = Direction.up;
             }
+            else if(key == ConsoleKey.DownArrow && direction != Direction.up)
+            {
+                direction = Direction.down;
+            }
+            else if(key == ConsoleKey.LeftArrow && direction != Direction.right)
+            {
+                direction = Direction.left;
+            }
+            else if(key == ConsoleKey.RightArrow && direction != Direction.left)
+            {
+                direction = Direction.right;
+            }
+             
+            //switch (key)
+            //{
+            //    case ConsoleKey.UpArrow:
+            //        direction = Direction.up;
+            //        break;
+            //    case ConsoleKey.DownArrow:
+            //        direction = Direction.down;
+            //        break;
+            //    case ConsoleKey.LeftArrow:
+            //        direction = Direction.left;
+            //        break;
+            //    case ConsoleKey.RightArrow:
+            //        direction = Direction.right;
+            //        break;
+            //}
         }
     }
 }

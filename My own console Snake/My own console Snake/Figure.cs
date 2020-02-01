@@ -6,8 +6,8 @@ namespace My_own_console_Snake
 {
     abstract class Figure
     {
-        protected List<Point> pList;
-        public void Draw()
+        public List<Point> pList;
+        public virtual void Draw()
         {
             foreach(var p in pList)
                 p.Draw();
