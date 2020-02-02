@@ -95,7 +95,16 @@ namespace My_own_console_Snake
             {
                 direction = Direction.right;
             }
-             
+            else if(key == ConsoleKey.Spacebar)
+            {
+                Console.SetCursorPosition(24, 1);
+                string pause = "PAUSE: TO CONTINUE PRESS ANY KEY";
+                Console.Write(pause);
+                Console.ReadKey();
+                Console.SetCursorPosition(24, 1);
+                Console.Write(new String(' ', pause.Length));
+            }
+
             //switch (key)
             //{
             //    case ConsoleKey.UpArrow:

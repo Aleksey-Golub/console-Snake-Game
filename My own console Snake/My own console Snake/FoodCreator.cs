@@ -24,10 +24,10 @@ namespace My_own_console_Snake
             while (flag)
             {
                 int x = random.Next(2, windowWidth - 2);
-                int y = random.Next(2, windowHeight - 2);
+                int y = random.Next(5, windowHeight - 2);
                 food = new Point(x, y, sym);
 
-                for (int i = 0; i < pList.Count - 1; i++)
+                for (int i = 0; i <= pList.Count - 1; i++)
                 {
                     if (pList[i].IsHit(food))
                     {

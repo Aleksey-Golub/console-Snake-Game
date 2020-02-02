@@ -9,10 +9,11 @@ namespace My_own_console_Snake
         
         public Barriers(int windowWidth, int windowHeight, char sym)
         {
-            HorizontalLine upperLine = new HorizontalLine(0, windowWidth - 2, 0, sym);
+            // 3 - size of border for SCORE. If 0 - border will disappear
+            HorizontalLine upperLine = new HorizontalLine(0, windowWidth - 2, 3, sym);
             HorizontalLine downLine = new HorizontalLine(0, windowWidth - 2, windowHeight - 1, sym);
-            VerticalLine leftLine = new VerticalLine(0, 0, windowHeight - 1, sym);
-            VerticalLine rightLine = new VerticalLine(windowWidth - 2, 0, windowHeight - 1, sym);
+            VerticalLine leftLine = new VerticalLine(0, 3, windowHeight - 1, sym);
+            VerticalLine rightLine = new VerticalLine(windowWidth - 2, 3, windowHeight - 1, sym);
 
             pList = new List<Point>();
 
