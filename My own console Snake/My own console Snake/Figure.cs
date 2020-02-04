@@ -4,9 +4,9 @@ using System.Text;
 
 namespace My_own_console_Snake
 {
-    abstract class Figure
+    class Figure
     {
-        public List<Point> pList;
+        public List<Point> pList = new List<Point>();
         public virtual void Draw()
         {
             foreach(var p in pList)

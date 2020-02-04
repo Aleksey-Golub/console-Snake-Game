@@ -8,34 +8,48 @@ namespace My_own_console_Snake
         private int windowWidth;
         private int windowHeight;
         private char sym;
+        private int indentForAdditionalField;
         Random random = new Random();
 
-        public FoodCreator(int windowWidth, int windowHeight, char sym)
+        public FoodCreator(int windowWidth, int windowHeight, char sym, int indentForAdditionalField)
         {
             this.windowWidth = windowWidth;
             this.windowHeight = windowHeight;
             this.sym = sym;
+            this.indentForAdditionalField = indentForAdditionalField;
         }
 
-        internal Point CreateFood(List<Point> pList)
+        internal Point CreateFood(List<Point> pListSnake, List<Point> pListAdditioanlBarrier)
         {
             Point food = new Point(1, 1, '@');
-            bool flag = true;
-            while (flag)
+            bool flagSnake = true;
+            bool flagAdditioanlBarrier = true;
+            while (flagSnake || flagAdditioanlBarrier)
             {
-                int x = random.Next(2, windowWidth - 2);
-                int y = random.Next(5, windowHeight - 2);
+                int x = random.Next(2, windowWidth - 3);
+                int y = random.Next(2 + indentForAdditionalField, windowHeight - 2);
                 food = new Point(x, y, sym);
 
-                for (int i = 0; i <= pList.Count - 1; i++)
+                for (int i = 0; i <= pListSnake.Count - 1; i++)
                 {
-                    if (pList[i].IsHit(food))
+                    if (pListSnake[i].IsHit(food))
                     {
-                        flag = true;
+                        flagSnake = true;
                         break;
                     }
                     else
-                        flag = false;
+                        flagSnake = false;
+                }
+
+                for (int i = 0; i <= pListAdditioanlBarrier.Count - 1; i++)
+                {
+                    if (pListAdditioanlBarrier[i].IsHit(food))
+                    {
+                        flagAdditioanlBarrier = true;
+                        break;
+                    }
+                    else
+                        flagAdditioanlBarrier = false;
                 }
             }
             return food;

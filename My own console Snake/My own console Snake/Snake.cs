@@ -29,7 +29,9 @@ namespace My_own_console_Snake
             pList.Add(head);
 
             tail.Clear();
+            Console.ForegroundColor = ConsoleColor.Green;
             head.Draw();
+            Console.ForegroundColor = ConsoleColor.Gray;
         }
 
         private Point GetNextPoint()
@@ -69,12 +71,24 @@ namespace My_own_console_Snake
             if (head.IsHit(food))
             {
                 food.sym = head.sym;
+                Console.ForegroundColor = ConsoleColor.Green;
                 food.Draw();
+                Console.ForegroundColor = ConsoleColor.Gray;
                 pList.Add(food);
                 return true;
             }
             else
                 return false;
+        }
+
+        public override void Draw()
+        {
+            Console.ForegroundColor = ConsoleColor.Green;
+            
+            foreach (var p in pList)
+                p.Draw();
+
+            Console.ForegroundColor = ConsoleColor.Gray;
         }
 
         internal void HandleKey(ConsoleKey key)
@@ -105,21 +119,24 @@ namespace My_own_console_Snake
                 Console.Write(new String(' ', pause.Length));
             }
 
-            //switch (key)
-            //{
-            //    case ConsoleKey.UpArrow:
-            //        direction = Direction.up;
-            //        break;
-            //    case ConsoleKey.DownArrow:
-            //        direction = Direction.down;
-            //        break;
-            //    case ConsoleKey.LeftArrow:
-            //        direction = Direction.left;
-            //        break;
-            //    case ConsoleKey.RightArrow:
-            //        direction = Direction.right;
-            //        break;
-            //}
+        
+
+        //switch (key)
+        //{
+        //    case ConsoleKey.UpArrow:
+        //        direction = Direction.up;
+        //        break;
+        //    case ConsoleKey.DownArrow:
+        //        direction = Direction.down;
+        //        break;
+        //    case ConsoleKey.LeftArrow:
+        //        direction = Direction.left;
+        //        break;
+        //    case ConsoleKey.RightArrow:
+        //        direction = Direction.right;
+        //        break;
+        //}
         }
+
     }
 }
