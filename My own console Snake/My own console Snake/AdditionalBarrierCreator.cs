@@ -20,9 +20,9 @@ namespace My_own_console_Snake
             this.indentForAdditionalField = indentForAdditionalField;
         }
 
-        internal Figure CreateAdditionalBarrier(List<Point> snakePList)
+        internal Figure CreateAdditionalBarrier(int level, List<Point> snakePList)
         {
-            
+
             /*List<Figure> fList = new List<Figure>() { new Figure(), new Figure()}; // creation of 2 parts of AdditionalBarrier
             int length = 5;
 
@@ -53,11 +53,42 @@ namespace My_own_console_Snake
                 }
                 
             }*/
-
-
-            // to do
             Figure additionalBarrier = new Figure();
-            additionalBarrier.pList.Add(new Point(10, 10, '#'));
+
+            if (level == 1)
+            {
+                // Создание дополнительного препятствия для Уровня 1
+                additionalBarrier.pList.Add(new Point(0, indentForAdditionalField, sym));
+            }
+            else if (level == 2)
+            {
+                // Создание дополнительного препятствия для Уровня 2
+                for (int i = windowWidth / 8 * 3; i <= windowWidth / 8 * 5; i++)
+                {
+                    additionalBarrier.pList.Add(new Point(i, 7 + indentForAdditionalField, sym));
+                }
+                for (int i = windowWidth / 8 * 3; i <= windowWidth / 8 * 5; i++)
+                {
+                    additionalBarrier.pList.Add(new Point(i, windowHeight - 8, sym));
+                }
+            }
+            else if(level > 2)
+            {
+                // Создание дополнительного препятствия для Уровня 3 и далее
+                //additionalBarrier.pList.Add(new Point(10, 10, sym));          // заглушка
+
+                for(int i = 0; i < 10;)
+                {
+                    int x = random.Next(2, windowWidth - 2);
+                    int y = random.Next(2 + indentForAdditionalField, windowHeight - 1);
+                    Point newPoint = new Point(x, y, sym);
+                    if (x != 4)
+                    {
+                        additionalBarrier.pList.Add(newPoint);
+                        i++;
+                    }
+                }
+            }
             return additionalBarrier;
         }
     }

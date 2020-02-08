@@ -60,5 +60,15 @@ namespace My_own_console_Snake
             sym = ' ';
             Draw();
         }
+
+        internal bool IsHitPointList(List<Point> pList)
+        {
+            for(int i = 0; i < pList.Count; i++)
+            {
+                if (this.IsHit(pList[i]))
+                    return true;
+            }
+            return false;
+        }
     }
 }
