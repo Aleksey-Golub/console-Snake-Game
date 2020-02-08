@@ -9,27 +9,27 @@ namespace My_own_console_Snake
         static void Main(string[] args)
         {
             /*  Осталось Исправить
-             * 1. Вернуть ((score == 2500 && level == 1) || (score == 5000 && level == 2))
+             * 1. TO DO   AdditionalBarrierCreator.CreateAdditionalBarrier(level)
              * 2. Создание и отрисовка препятствия Level 3 with 2 random Figure consist of 5 connected Points 
-             * 3. TO DO   AdditionalBarrierCreator.CreateAdditionalBarrier()
-             * 4. Экран после стартового: Управление + Выбор уровня сложности после старта: EASY/HARD (scoreForLevelUp = 1000/2500)
+             * 3. Исправить if (score / level == scoreDifficaltyLimit && level < 3)
             */
             // Game Sittings
             int indentForAdditionalField = 3;
             int windowWidth = 80;
             int windowHeight = 25 + indentForAdditionalField;
             int finalScore = 0;
+            int scoreDifficaltyLimit = 100;
 
 
             Console.SetWindowSize(1, 1);
             Console.SetBufferSize(windowWidth, windowHeight);
             Console.SetWindowSize(windowWidth, windowHeight);
 
-
+            
             #region Стартовый Экран
             int TreadOfStartScreen = 400;
             Console.CursorVisible = false;
-            
+            /*
             Console.SetCursorPosition(37, 7);
             Console.Write("WELCOME");
             Thread.Sleep(TreadOfStartScreen);
@@ -71,10 +71,51 @@ namespace My_own_console_Snake
             Console.Write("by G.A.S.");
             Thread.Sleep(TreadOfStartScreen * 3);
 
-            Console.SetCursorPosition(30, 25);
-            Console.Write("PRESS ANY KEY TO START");
+            Console.SetCursorPosition(28, 25);
+            Console.Write("PRESS ANY KEY TO CONTINUE");
 
             Console.ReadKey();
+            */
+            #endregion
+            
+            #region Экран Управления
+
+            Console.Clear();
+            Console.SetCursorPosition(39, 6);
+            Console.Write("use");
+
+            Console.SetCursorPosition(35, 8);
+            Console.Write("UP and DOWN,");
+
+            Console.SetCursorPosition(34, 9);
+            Console.Write("RIGHT and LEFT");
+
+            Console.SetCursorPosition(33, 10);
+            Console.Write("to CONTROL Snake");
+
+            Console.SetCursorPosition(34, 12);
+            Console.Write("SPACE to PAUSE");
+
+            Console.SetCursorPosition(25, 17);
+            Console.Write("choose difficulty: EASY / HARD");
+
+            Thread.Sleep(TreadOfStartScreen);
+            Console.SetCursorPosition(34, 22);
+            Console.Write("PRESS E / H");
+
+            ConsoleKeyInfo keyDifficulty;
+            do
+            {
+                keyDifficulty = Console.ReadKey();
+                if (keyDifficulty.Key == ConsoleKey.E)
+                    scoreDifficaltyLimit = 1000;
+                else if (keyDifficulty.Key == ConsoleKey.H)
+                    scoreDifficaltyLimit = 2500;
+            } while (keyDifficulty.Key != ConsoleKey.E && keyDifficulty.Key != ConsoleKey.H);
+            
+
+            //Thread.Sleep(TreadOfStartScreen);
+            Console.Clear();
 
             #endregion
 
@@ -170,7 +211,7 @@ namespace My_own_console_Snake
                             Console.SetCursorPosition(8, 1);
                             Console.Write(score);
 
-                            if ((score == 300 && level == 1) || (score == 500 && level == 2))
+                            if (score / level == scoreDifficaltyLimit && level < 3)//((score == 300 && level == 1) || (score == 500 && level == 2))
                             {
                                 level++;
                                 break;
@@ -221,8 +262,8 @@ namespace My_own_console_Snake
                 
                 flag = false;
 
-                ConsoleKeyInfo key1 = Console.ReadKey();
-                if (key1.Key == ConsoleKey.Y)
+                ConsoleKeyInfo keyExit = Console.ReadKey();
+                if (keyExit.Key == ConsoleKey.Y)
                         flag = true;
                 #endregion 
             }

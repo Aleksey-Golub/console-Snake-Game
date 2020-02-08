@@ -22,8 +22,8 @@ namespace My_own_console_Snake
 
         internal Figure CreateAdditionalBarrier(List<Point> snakePList)
         {
-            /*
-            List<Figure> fList = new List<Figure>() { new Figure(), new Figure()}; // creation of 2 parts of AdditionalBarrier
+            
+            /*List<Figure> fList = new List<Figure>() { new Figure(), new Figure()}; // creation of 2 parts of AdditionalBarrier
             int length = 5;
 
             for(int i = 0; i < fList.Count; i++)
